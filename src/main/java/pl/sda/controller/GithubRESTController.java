@@ -6,20 +6,19 @@ import org.springframework.web.bind.annotation.RestController;
 import pl.sda.domain.UserRepository;
 import pl.sda.service.GithubService;
 
-@RestController("/")
+@RestController
 @Slf4j
-public class GithubController {
+public class GithubRESTController {
 
     private final GithubService service;
 
-    public GithubController(final GithubService service) {
+    public GithubRESTController(final GithubService service) {
         this.service = service;
     }
 
-    @GetMapping
-    public UserRepository[] getGithubRepositories(){
-        /*HttpHeaders headers = new HttpHeaders();
-        headers.add("User-Agent", "rdzienio");*/
+    @GetMapping(path = {"api", "/api/*"})
+    public UserRepository[] getGithubRepositoriesJSON(){
         return service.getGithubRepositories();
     }
+
 }
