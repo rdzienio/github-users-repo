@@ -3,7 +3,7 @@ package pl.sda.githubrepo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "pl.sda")
 public class GitHubRepoApplication {
 
     public static void main(String[] args) {
