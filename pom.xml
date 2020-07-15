@@ -10,7 +10,7 @@
     </parent>
     <groupId>pl.sda</groupId>
     <artifactId>git-hub-repo</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <name>git-hub-repo</name>
     <description>Demo project for Spring Boot</description>
 
