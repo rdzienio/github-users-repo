@@ -1,12 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <title>GitHub repos</title>
 </head>
 <body>
+<div class="container">
+<h3 th:text="'User: '+${userName}+ ' GitHub repositories'">User GitHub repositories</h3>
 
-<h2>In progress...</h2>
+    <dl th:each="repo : ${githubRepos}">
+        <dt th:text="'Name: '+ ${repo.name}">Repo name</dt>
+        <dd th:text="'Full name: '+ ${repo.full_name}">Repo full name</dd>
+        <dd th:text="'Description: '+ ${repo.description}">Description</dd>
+        <dd th:text="'Language: '+ ${repo.language}">Language</dd>
+    </dl>
+</div>
 
 </body>
 </html>
